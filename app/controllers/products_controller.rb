@@ -8,8 +8,11 @@ class ProductsController < ApplicationController
   end
 
   def buy
-    @product = Product.find(params[:id])
-    current_user.products << @product
+    @product_id = params[:id]
+    if Purchase.where("user_id = ? AND product_id = ?", current_user.id, @product_id).count == 0
+      @product = Product.find(@product_id)
+      current_user.products << @product
+    end
   end
 
   # GET /products/1
