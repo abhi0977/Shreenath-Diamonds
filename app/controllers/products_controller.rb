@@ -7,6 +7,12 @@ class ProductsController < ApplicationController
     @products = Product.all
   end
 
+  def buy
+    @p = Product.new
+    @p.title = "true"
+    @p.save
+  end
+
   # GET /products/1
   # GET /products/1.json
   def show
