@@ -8,9 +8,8 @@ class ProductsController < ApplicationController
   end
 
   def buy
-    @p = Product.new
-    @p.title = "true"
-    @p.save
+    @product = Product.find(params[:id])
+    current_user.products << @product
   end
 
   # GET /products/1

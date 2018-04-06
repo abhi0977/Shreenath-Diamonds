@@ -18,7 +18,11 @@
         <td><%= product.title %></td>
         <td><%= product.description %></td>
         <td><%= product.price %></td>
+
+        <% if user_signed_in? %>
         <td><%= link_to "buy", buy_products_path(product), remote: true %></td>
+            <% else %>
+            <% end %>
         <!-- <td><%= link_to 'Buy', product, method: :buy, data: { confirm: 'Are you sure?' } %></td> -->
       </tr>
     <% end %>
