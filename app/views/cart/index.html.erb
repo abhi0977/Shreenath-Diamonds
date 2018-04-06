@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Cart</h1>
+
+  <% if @products.count == 0 %>
+    <h4>Cart is empty</h4>
+  <%else%>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @products.each do |product| %>
+        <tr>
+          <td><%= product.title %></td>
+          <td><%= product.description %></td>
+          <td><%= product.price %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <%end %>
