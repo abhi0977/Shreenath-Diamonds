@@ -8,4 +8,5 @@ end
   devise_for :users
   root 'products#index'
   resources 'posts'
+  resources :charges
 end

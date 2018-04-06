@@ -27,7 +27,8 @@
       <% end %>
     </tbody>
   </table>
-
+  <% p @tPrice %>
   Totle Price : <%= @tPrice %>
+  <td><%= link_to "Checkout", new_charge_path(:tPrice => @tPrice) %></td>
 
   <%end %>
